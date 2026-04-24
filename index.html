@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Clicker</title>
+	<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+<div id="statsPanel">
+	<h3>Stats</h3>
+	<p>Total earned: <span id="totalEarned">0</span></p>
+	<p>Click power: <span id="statClickPower">1</span></p>
+	<p>Auto clickers: <span id="statAutoClicker">0</span></p>
+	<p>Crit chance: <span id="statCritChance">0</span>%</p>
+	<p>Crit multiplier: <span id="statCritMultiplier">2</span>x</p>
+	<p>Total clicks: <span id="statTotalClicks">0</span></p>
+	<p>Total crits: <span id="statTotalCrits">0</span></p>
+	<p>Current streak: <span id="statCurrentStreak">0</span></p>
+	<p>Best streak: <span id="statBestStreak">0</span></p>
+	<p>Streak bonus total: <span id="statStreakBonusTotal">0</span></p>
+</div>
+
+<p>Score: <span id="score">0</span></p>
+
+<div id="circleWrapper">
+    <div id="circle"></div>
+</div>
+
+<button id="upgradeBtn">upgrade</button>
+
+<!--  -->
+
+<div id="upgradeMenu">
+	<h3> Upgrades </h3>
+	
+	<button id="upgrade1">Increase click power (Cost: 10)</button>
+	<button id="upgrade2">Auto Clicker (Cost: 50)</button>
+	<button id="upgrade3">Critical Click Chance +5% (Cost: 75)</button>
+	<button id="debugBtn">+100000 points (debug)</button>
+</div>
+
+
+
+<script src="script/script.js"></script>
+
+</body>
