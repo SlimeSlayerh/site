@@ -1,0 +1,187 @@
+/* Sivu */
+body {
+	text-align: center;
+	font-family: Arial;
+}
+
+#statsPanel {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    width: 220px;
+    text-align: left;
+    background: rgba(245, 245, 245, 0.95);
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+#statsPanel h3 {
+    margin: 0 0 8px 0;
+}
+
+#statsPanel p {
+    margin: 5px 0;
+}
+
+
+/* Ympyrä */
+#circle {
+	width: 150px;
+	height: 150px;
+	background: blue;
+	border-radius: 50%;
+	cursor: pointer;
+    transition: transform 0.1s, background 0.15s, box-shadow 0.15s;
+}
+
+#circle:active {
+    transform: scale(0.9);
+}
+
+#upgradeMenu {
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background: lightgray;
+    border: 2px solid black;
+    display: none; /* ei näy */
+}
+
+/* autoclicker */
+
+/* Auto clicker cursors */
+#circleWrapper {
+    position: relative;
+    width: 150px;
+    margin: 20px auto;
+    display: block;
+}
+
+#upgradeBtn {
+    display: block;      /* puts it on its own line */
+    margin: 12px auto 0; /* centers button under circle */
+}
+
+#circle {
+    /* remove the margin: 20px auto you had before, wrapper handles it */
+    margin: 0;
+}
+
+.autoCursor {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none;
+    transition: transform 0.1s;
+}
+
+.autoCursor.clicking {
+    transform: scale(0.7);
+}
+
+#circle.autoClick {
+    transform: scale(0.9);
+}
+
+#circle.critHit {
+    background: gold;
+    box-shadow: 0 0 20px gold;
+}
+
+#circle.streakActive {
+    background: linear-gradient(135deg, #67e8f9 0%, #a78bfa 100%);
+    box-shadow: 0 0 8px rgba(103, 232, 249, 0.65), 0 0 16px rgba(167, 139, 250, 0.45);
+    animation: streakAura 1.4s ease-in-out infinite alternate;
+}
+
+#circle.streakPulse {
+    animation: streakPulse 0.28s ease-out;
+}
+
+.critText {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 1px 2px black;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 2px 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+    animation: critFloat 0.6s ease-out forwards;
+}
+
+.streakEndText {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 0 1px 2px black;
+    background: rgba(25, 25, 25, 0.85);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+    animation: streakFade 1.3s ease-out forwards;
+}
+
+.streakStartText {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 1px 0 white;
+    background: rgba(255, 235, 59, 0.95);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    animation: streakFade 0.9s ease-out forwards;
+}
+
+@keyframes critFloat {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -95%);
+    }
+}
+
+@keyframes streakFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -85%);
+    }
+}
+
+@keyframes streakAura {
+    0% {
+        box-shadow: 0 0 6px rgba(103, 232, 249, 0.55), 0 0 12px rgba(167, 139, 250, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(103, 232, 249, 0.7), 0 0 20px rgba(167, 139, 250, 0.5);
+    }
+}
+
+@keyframes streakPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
